@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
         IEnumerator JustWaitForSound()
         {
-            playerAudio.PlayOneShot(dow);
+            playerAudio.PlayOneShot(dow, 0.4f);
             yield return new WaitForSeconds(0.3f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
