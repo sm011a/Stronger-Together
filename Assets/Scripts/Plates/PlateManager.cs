@@ -11,15 +11,20 @@ public class PlateManager : MonoBehaviour
     {
         if (player)
         {
-            StartCoroutine(WaitActive());
+            portalTrigger.SetActive(true);
+            portalParticle.SetActive(true);
+            transform.Translate(0, -0.115f, 0);
         }
     }
-    
+
+    private void OnCollisionExit(Collision collision)
+    {
+        StartCoroutine(WaitActive());
+    }
     IEnumerator WaitActive()
     {
-        portalTrigger.SetActive(true);
-        portalParticle.SetActive(true);
         yield return new WaitForSeconds(2);
+        transform.Translate(0, 0.072f, 0);
         portalTrigger.SetActive(false);
         portalParticle.SetActive(false);
     }

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ActiveDeactiveButton : MonoBehaviour
 {
@@ -11,7 +8,7 @@ public class ActiveDeactiveButton : MonoBehaviour
     {
         panal.SetActive(!panal.activeSelf);
 
-        if(panal.activeSelf == true)
+        if (panal.activeSelf == true)
         {
             Time.timeScale = 0;
         }
@@ -20,5 +17,4 @@ public class ActiveDeactiveButton : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-
 }
